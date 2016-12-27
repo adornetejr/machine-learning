@@ -22,7 +22,7 @@ struct ValueImpl : public Value {
 struct DataEntry {
 public:
   DataEntry()
-    : shape(nullptr),
+    : data_shape(nullptr),
       output_value(nullptr) {
   }
   virtual ~DataEntry() {
@@ -36,7 +36,7 @@ public:
     }
   }
 public:
-  DataShape *shape;
+  DataShape *data_shape;
   std::vector<Value *> input_values;
   Value *output_value;
 };
@@ -44,11 +44,11 @@ public:
 struct DataSet {
 public:
   DataSet()
-    : shape(nullptr) {
+    : data_shape(nullptr) {
   }
   virtual ~DataSet() {
-    if (shape) {
-      delete shape;
+    if (data_shape) {
+      delete data_shape;
     }
     for (uint32_t i = 0; i < entries.size(); i++) {
       delete entries[i];
@@ -56,6 +56,6 @@ public:
     entries.clear();
   }
 public:
-  DataShape *shape;
+  DataShape *data_shape;
   std::vector<DataEntry *> entries;
 };
