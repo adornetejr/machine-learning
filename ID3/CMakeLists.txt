@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8) 
+cmake_minimum_required(VERSION 2.8)
 
 project(id3)
 
@@ -8,6 +8,7 @@ endif()
 
 add_executable(id3
   ${CMAKE_SOURCE_DIR}/main.cc
+  ${CMAKE_SOURCE_DIR}/tennis_parser.cc
 )
 
 if (UNIX)

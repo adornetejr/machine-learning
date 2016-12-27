@@ -2,7 +2,6 @@
 
 #include <vector>
 
-
 struct DataShape {
   std::vector<std::string> input_field_names;
   std::string output_field_name;
@@ -11,6 +10,7 @@ struct DataShape {
 struct Value {
 protected:
   Value() {}
+public:
   virtual ~Value() {};
 };
 
@@ -21,7 +21,7 @@ struct ValueImpl : public Value {
 
 struct DataEntry {
 public:
-  DataEntry() 
+  DataEntry()
     : shape(nullptr),
       output_value(nullptr) {
   }
@@ -39,11 +39,11 @@ public:
   DataShape *shape;
   std::vector<Value *> input_values;
   Value *output_value;
-}
+};
 
 struct DataSet {
 public:
-  DataSet() 
+  DataSet()
     : shape(nullptr) {
   }
   virtual ~DataSet() {
