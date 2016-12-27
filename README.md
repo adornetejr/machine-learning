@@ -1,2 +1,2 @@
 # machine-learning
-Implementation of machine learning algorithms
+Implementation of some machine learning algorithms
