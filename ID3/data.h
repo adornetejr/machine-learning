@@ -50,12 +50,12 @@ public:
     if (data_shape) {
       delete data_shape;
     }
-    for (uint32_t i = 0; i < entries.size(); i++) {
-      delete entries[i];
+    for (uint32_t i = 0; i < data_entries.size(); i++) {
+      delete data_entries[i];
     }
-    entries.clear();
+    data_entries.clear();
   }
 public:
   DataShape *data_shape;
-  std::vector<DataEntry *> entries;
+  std::vector<DataEntry *> data_entries;
 };
