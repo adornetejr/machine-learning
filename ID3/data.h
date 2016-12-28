@@ -1,8 +1,16 @@
 #pragma once
 
+#include <string>
 #include <vector>
 
 struct DataShape {
+public:
+  DataShape()
+    : has_output_field(true),
+      output_field_name("") {
+  }
+public:
+  bool has_output_field;
   std::vector<std::string> input_field_names;
   std::string output_field_name;
 };
