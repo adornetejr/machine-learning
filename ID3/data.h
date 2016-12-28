@@ -12,7 +12,9 @@ public:
 public:
   bool has_output_field;
   std::vector<std::string> input_field_names;
+  std::vector<std::string> input_types;
   std::string output_field_name;
+  std::string output_type;
 };
 
 struct Value {

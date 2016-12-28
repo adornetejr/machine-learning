@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 
 #include "data.h"
@@ -63,6 +62,7 @@ DataUtils::ExtractFields(DataSet *data_set, std::vector<std::string> field_names
   for (uint32_t i = 0; i < data_set->data_shape->input_field_names.size(); i++) {
     if (std::find(field_names.begin(), field_names.end(), data_set->data_shape->input_field_names[i]) != field_names.end()) {
       data_shape->input_field_names.push_back(data_set->data_shape->input_field_names[i]);
+      data_shape->input_types.push_back(data_set->data_shape->input_types[i]);
     }
   }
   for (uint32_t i = 0; i < data_set->data_shape->input_field_names.size(); i++) {
@@ -76,9 +76,4 @@ DataUtils::ExtractFields(DataSet *data_set, std::vector<std::string> field_names
     }
   }
   return target_data_set;
-}
-
-std::vector<Value *> 
-DataUtils::ExtractValues(DataSet *data_set, std::string field_name) {
-  return std::vector<Value *>();
 }
