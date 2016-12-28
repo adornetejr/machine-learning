@@ -9,9 +9,13 @@ struct DataShape {
 
 struct Value {
 protected:
-  Value() {}
+  Value()
+    : type("") {
+  }
 public:
   virtual ~Value() {};
+public:
+  std::string type;
 };
 
 template<typename T>

@@ -8,6 +8,7 @@ endif()
 
 add_executable(id3
   ${CMAKE_SOURCE_DIR}/main.cc
+  ${CMAKE_SOURCE_DIR}/data_utils.cc
   ${CMAKE_SOURCE_DIR}/tennis_parser.cc
 )
 

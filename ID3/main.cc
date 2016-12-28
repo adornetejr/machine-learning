@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "data.h"
+#include "data_utils.h"
 #include "tennis_parser.h"
 
 int main(int argc, char **argv) {
@@ -12,5 +13,6 @@ int main(int argc, char **argv) {
   parser->Finalize();
   delete parser;
   // Make decision tree
+  DataUtils::Print(&data_set);
   return 0;
 }

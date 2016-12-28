@@ -42,12 +42,16 @@ TennisParser::Fill(DataSet *data_set) {
       }
     }
     auto outlook_value = new ValueImpl<std::string>;
+    outlook_value->type = "string";
     outlook_value->v = str_values[0];
     auto temperature_value = new ValueImpl<std::string>;
+    temperature_value->type = "string";
     temperature_value->v = str_values[1];
     auto humidity_value = new ValueImpl<std::string>;
+    humidity_value->type = "string";
     humidity_value->v = str_values[2];
     auto wind_value = new ValueImpl<bool>;
+    wind_value->type = "bool";
     wind_value->v = (str_values[3] == "TRUE");
     DataEntry *data_entry = new DataEntry;
     data_entry->data_shape = data_set->data_shape;
@@ -56,6 +60,7 @@ TennisParser::Fill(DataSet *data_set) {
     data_entry->input_values.push_back(humidity_value);
     data_entry->input_values.push_back(wind_value);
     auto playtennis_value = new ValueImpl<bool>;
+    playtennis_value->type = "bool";
     playtennis_value->v = (str_values[4] == "yes");
     data_entry->output_value = playtennis_value;
     data_set->data_entries.push_back(data_entry);
