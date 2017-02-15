@@ -13,6 +13,6 @@ int main(int argc, char **argv) {
   parser->Finalize();
   delete parser;
   // Make decision tree
-  DataUtils::Print(&data_set);
+  
   return 0;
 }

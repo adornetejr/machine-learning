@@ -29,6 +29,7 @@ TennisParser::Fill(DataSet *data_set) {
     data_set->data_shape->input_field_names.push_back(field_names[i]);
   }
   data_set->data_shape->output_field_name = field_names[field_names.size() - 1];
+  data_set->data_shape->output_type = "bool";
   // Read lines
   while (not f.eof()) {
     std::getline(f, line);
@@ -43,6 +44,7 @@ TennisParser::Fill(DataSet *data_set) {
     }
     auto outlook_value = new ValueImpl<std::string>;
     outlook_value->type = "string";
+    data_set->data_shape->output_type = "bool";
     outlook_value->v = str_values[0];
     auto temperature_value = new ValueImpl<std::string>;
     temperature_value->type = "string";
